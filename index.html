@@ -34,7 +34,7 @@
   <body class="geist-font">
     <!-- Login Form -->
     <section class="mt-8">
-      <div class="w-4/12 mx-auto shadow-md text-center py-10 px-5 rounded-lg">
+      <div class="w-4/12 mx-auto shadow-xl text-center py-5 px-5 rounded-lg">
         <img class="mx-auto" src="assets/github-logo.png" alt="" />
         <h2 class="text-3xl font-semibold">GitHub Issues Tracker</h2>
         <p class="text-lg font-normal text-[#64748B]">
@@ -47,6 +47,7 @@
             >Username</label
           >
           <input
+            id="usernameInput"
             type="email"
             class="p-3 rounded-sm text-lg font-normal"
             placeholder="Enter Username"
@@ -56,12 +57,13 @@
             >Password</label
           >
           <input
+            id="passwordInput"
             type="password"
             class="p-3 rounded-sm text-lg font-normal"
             placeholder="Enter Password"
           />
 
-          <button class="btn btn-primary mt-4">Sign In</button>
+          <button id="sign-btn" class="btn btn-primary mt-4">Sign In</button>
         </fieldset>
 
         <div class="mt-5">
