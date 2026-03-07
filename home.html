@@ -28,10 +28,365 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/github-logo.png" />
 
+    <!-- Fontawesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <title>GitHub Issues Tracker | Home Page</title>
   </head>
 
   <body>
-    <h2>Home Page</h2>
+    <!-- Nav bar -->
+    <nav>
+      <div class="navbar bg-base-100 shadow-sm flex justify-between px-12 py-5">
+        <div class="flex gap-2">
+          <img
+            class="inline-block w-9 h-9"
+            src="assets/github-logo.png"
+            alt=""
+          />
+          <a class="text-2xl font-semibold text-[#1F2937]"
+            >GitHub Issues Tracker</a
+          >
+        </div>
+
+        <div class="flex gap-5">
+          <label class="input input-bordered flex items-center gap-2">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="grow" placeholder="Search issues..." />
+          </label>
+          <button class="btn btn-primary text-lg font-semibold">
+            + New Issue
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="mt-14 w-11/12 mx-auto py-12">
+      <!-- home page Button -->
+      <div class="p-6 shadow-md rounded-xl space-x-3">
+        <button class="btn btn-primary px-3">All</button>
+        <button class="btn btn-primary">Open</button>
+        <button class="btn btn-primary">Closed</button>
+      </div>
+
+      <!-- Issue count -->
+      <div class="p-6 flex justify-between shadow-md mt-8 rounded-t-2xl">
+        <div class="flex gap-3">
+          <img
+            class="bg-[#ECE4FF] p-2 rounded-full w-[50px] h-[50px]"
+            src="assets/Aperture.png"
+            alt=""
+          />
+          <h2>
+            <span class="text-xl font-semibold text-[#1F2937]">50 Issues</span>
+            <br />
+            <span class="text-[#64748B] text-lg font-normal"
+              >Track and manage your project issues</span
+            >
+          </h2>
+        </div>
+        <div class="flex gap-3">
+          <p><i class="fa-solid fa-circle text-[#00A96E]"></i>Open</p>
+          <p><i class="fa-solid fa-circle text-[#A855F7]"></i>Closed</p>
+        </div>
+      </div>
+
+      <!-- Card container -->
+      <div class="mt-1 shadow-md p-10 grid grid-cols-3 rounded-sm gap-10">
+        <!-- Single Card -->
+        <div
+          class="shadow-md p-5 space-y-5 rounded-md border-t-4 border-[#00A96E]"
+        >
+          <div class="flex justify-between flex-1">
+            <img
+              class="w-[35px] h-[35px]"
+              src="assets/Open-Status.png"
+              alt=""
+            />
+            <button
+              class="bg-[#FEECEC] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              HIGH
+            </button>
+          </div>
+          <h2 class="text-xl text-[#1F2937] font-semibold">
+            Fix Navigation Menu On Mobile Devices
+          </h2>
+          <p class="text-[#64748B] text-lg font-normal">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="space-x-3">
+            <button
+              class="bg-[#FECACA] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              <i class="fa-solid fa-bug mr-1"></i>BUG
+            </button>
+            <button
+              class="bg-[#FDE68A] px-4 py-2 rounded-4xl text-[#D97706] font-medium"
+            >
+              <i class="fa-solid fa-circle-radiation mr-1"></i>HELP WANTED
+            </button>
+          </div>
+          <hr class="opacity-30" />
+          <div class="text-[#64748B] space-y-3">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+        <!-- Single Card -->
+        <div
+          class="shadow-md p-5 space-y-5 rounded-md border-t-4 border-[#00A96E]"
+        >
+          <div class="flex justify-between flex-1">
+            <img
+              class="w-[35px] h-[35px]"
+              src="assets/Open-Status.png"
+              alt=""
+            />
+            <button
+              class="bg-[#FEECEC] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              HIGH
+            </button>
+          </div>
+          <h2 class="text-xl text-[#1F2937] font-semibold">
+            Fix Navigation Menu On Mobile Devices
+          </h2>
+          <p class="text-[#64748B] text-lg font-normal">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="space-x-3">
+            <button
+              class="bg-[#FECACA] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              <i class="fa-solid fa-bug mr-1"></i>BUG
+            </button>
+            <button
+              class="bg-[#FDE68A] px-4 py-2 rounded-4xl text-[#D97706] font-medium"
+            >
+              <i class="fa-solid fa-circle-radiation mr-1"></i>HELP WANTED
+            </button>
+          </div>
+          <hr class="opacity-30" />
+          <div class="text-[#64748B] space-y-3">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+        <!-- Single Card -->
+        <div
+          class="shadow-md p-5 space-y-5 rounded-md border-t-4 border-[#00A96E]"
+        >
+          <div class="flex justify-between flex-1">
+            <img
+              class="w-[35px] h-[35px]"
+              src="assets/Open-Status.png"
+              alt=""
+            />
+            <button
+              class="bg-[#FEECEC] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              HIGH
+            </button>
+          </div>
+          <h2 class="text-xl text-[#1F2937] font-semibold">
+            Fix Navigation Menu On Mobile Devices
+          </h2>
+          <p class="text-[#64748B] text-lg font-normal">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="space-x-3">
+            <button
+              class="bg-[#FECACA] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              <i class="fa-solid fa-bug mr-1"></i>BUG
+            </button>
+            <button
+              class="bg-[#FDE68A] px-4 py-2 rounded-4xl text-[#D97706] font-medium"
+            >
+              <i class="fa-solid fa-circle-radiation mr-1"></i>HELP WANTED
+            </button>
+          </div>
+          <hr class="opacity-30" />
+          <div class="text-[#64748B] space-y-3">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+        <!-- Single Card -->
+        <div
+          class="shadow-md p-5 space-y-5 rounded-md border-t-4 border-[#00A96E]"
+        >
+          <div class="flex justify-between flex-1">
+            <img
+              class="w-[35px] h-[35px]"
+              src="assets/Open-Status.png"
+              alt=""
+            />
+            <button
+              class="bg-[#FEECEC] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              HIGH
+            </button>
+          </div>
+          <h2 class="text-xl text-[#1F2937] font-semibold">
+            Fix Navigation Menu On Mobile Devices
+          </h2>
+          <p class="text-[#64748B] text-lg font-normal">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="space-x-3">
+            <button
+              class="bg-[#FECACA] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              <i class="fa-solid fa-bug mr-1"></i>BUG
+            </button>
+            <button
+              class="bg-[#FDE68A] px-4 py-2 rounded-4xl text-[#D97706] font-medium"
+            >
+              <i class="fa-solid fa-circle-radiation mr-1"></i>HELP WANTED
+            </button>
+          </div>
+          <hr class="opacity-30" />
+          <div class="text-[#64748B] space-y-3">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+        <!-- Single Card -->
+        <div
+          class="shadow-md p-5 space-y-5 rounded-md border-t-4 border-[#00A96E]"
+        >
+          <div class="flex justify-between flex-1">
+            <img
+              class="w-[35px] h-[35px]"
+              src="assets/Open-Status.png"
+              alt=""
+            />
+            <button
+              class="bg-[#FEECEC] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              HIGH
+            </button>
+          </div>
+          <h2 class="text-xl text-[#1F2937] font-semibold">
+            Fix Navigation Menu On Mobile Devices
+          </h2>
+          <p class="text-[#64748B] text-lg font-normal">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="space-x-3">
+            <button
+              class="bg-[#FECACA] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              <i class="fa-solid fa-bug mr-1"></i>BUG
+            </button>
+            <button
+              class="bg-[#FDE68A] px-4 py-2 rounded-4xl text-[#D97706] font-medium"
+            >
+              <i class="fa-solid fa-circle-radiation mr-1"></i>HELP WANTED
+            </button>
+          </div>
+          <hr class="opacity-30" />
+          <div class="text-[#64748B] space-y-3">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+        <!-- Single Card -->
+        <div
+          class="shadow-md p-5 space-y-5 rounded-md border-t-4 border-[#00A96E]"
+        >
+          <div class="flex justify-between flex-1">
+            <img
+              class="w-[35px] h-[35px]"
+              src="assets/Open-Status.png"
+              alt=""
+            />
+            <button
+              class="bg-[#FEECEC] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              HIGH
+            </button>
+          </div>
+          <h2 class="text-xl text-[#1F2937] font-semibold">
+            Fix Navigation Menu On Mobile Devices
+          </h2>
+          <p class="text-[#64748B] text-lg font-normal">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="space-x-3">
+            <button
+              class="bg-[#FECACA] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              <i class="fa-solid fa-bug mr-1"></i>BUG
+            </button>
+            <button
+              class="bg-[#FDE68A] px-4 py-2 rounded-4xl text-[#D97706] font-medium"
+            >
+              <i class="fa-solid fa-circle-radiation mr-1"></i>HELP WANTED
+            </button>
+          </div>
+          <hr class="opacity-30" />
+          <div class="text-[#64748B] space-y-3">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+        <!-- Single Card -->
+        <div
+          class="shadow-md p-5 space-y-5 rounded-md border-t-4 border-[#00A96E]"
+        >
+          <div class="flex justify-between flex-1">
+            <img
+              class="w-[35px] h-[35px]"
+              src="assets/Open-Status.png"
+              alt=""
+            />
+            <button
+              class="bg-[#FEECEC] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              HIGH
+            </button>
+          </div>
+          <h2 class="text-xl text-[#1F2937] font-semibold">
+            Fix Navigation Menu On Mobile Devices
+          </h2>
+          <p class="text-[#64748B] text-lg font-normal">
+            The navigation menu doesn't collapse properly on mobile devices...
+          </p>
+
+          <div class="space-x-3">
+            <button
+              class="bg-[#FECACA] px-4 py-2 rounded-4xl text-[#EF4444] font-medium"
+            >
+              <i class="fa-solid fa-bug mr-1"></i>BUG
+            </button>
+            <button
+              class="bg-[#FDE68A] px-4 py-2 rounded-4xl text-[#D97706] font-medium"
+            >
+              <i class="fa-solid fa-circle-radiation mr-1"></i>HELP WANTED
+            </button>
+          </div>
+          <hr class="opacity-30" />
+          <div class="text-[#64748B] space-y-3">
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
