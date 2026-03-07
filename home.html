@@ -70,9 +70,13 @@
     <section class="mt-6 w-11/12 mx-auto py-12">
       <!-- home page Button -->
       <div class="p-6 shadow-md rounded-xl space-x-3">
-        <button class="btn btn-primary px-3">All</button>
-        <button class="btn btn-primary">Open</button>
-        <button class="btn btn-primary">Closed</button>
+        <button id="show-all" class="btn btn-primary px-3 filter-btn">
+          All
+        </button>
+        <button id="show-open" class="btn btn-primary filter-btn">Open</button>
+        <button id="show-closed" class="btn btn-primary filter-btn">
+          Closed
+        </button>
       </div>
 
       <!-- Issue count -->
@@ -84,7 +88,9 @@
             alt=""
           />
           <h2>
-            <span class="text-xl font-semibold text-[#1F2937]">50 Issues</span>
+            <span id="issue-count" class="text-xl font-semibold text-[#1F2937]"
+              >50 Issues</span
+            >
             <br />
             <span class="text-[#64748B] text-lg font-normal"
               >Track and manage your project issues</span
@@ -101,7 +107,7 @@
 
       <div
         id="card-data-container"
-        class="mt-1 shadow-md p-10 grid grid-cols-3 rounded-sm gap-10"
+        class="mt-1 shadow-md p-8 grid grid-cols-4 rounded-sm gap-6"
       ></div>
     </section>
 
