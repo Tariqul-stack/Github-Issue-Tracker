@@ -10,24 +10,7 @@ const loadAllData = () => {
     });
 };
 
-// button toggle
-document.getElementById("show-all").addEventListener("click", function () {
-  displayCardData(allCards);
-});
-
-document.getElementById("show-open").addEventListener("click", function () {
-  const openCards = allCards.filter(card => card.status === "open");
-  displayCardData(openCards);
-});
-
-document.getElementById("show-closed").addEventListener("click", function () {
-  const closedCards = allCards.filter(card => card.status === "closed");
-  displayCardData(closedCards);
-});
-
-loadAllData();
-
-/// active remove
+// active remove
 const removeActiveBtn = () => {
   const buttons = document.querySelectorAll(".filter-btn");
 
@@ -71,6 +54,8 @@ document.getElementById("show-closed").addEventListener("click", function () {
   const closedCards = allCards.filter(card => card.status === "closed");
   displayCardData(closedCards);
 });
+
+loadAllData();
 
 // Issue count
 const updateIssueCount = (count) => {
@@ -149,7 +134,7 @@ const displayCardData = (cardData) => {
 
     cardDiv.innerHTML = `
       
-        <div class="shadow-md p-5 space-y-5 rounded-md border-t-4 ${borderColor}">
+        <div onclick="loadSingleCardDetails(${card.id})" class="shadow-md p-5 space-y-5 rounded-md border-t-4 ${borderColor} cursor-pointer">
           <div class="flex justify-between flex-1">
             <div class="w-10 h-10 bg-[#BBF7D0] rounded-full flex items-center justify-center">
               <i class="fa-solid fa-circle-info text-[#00A96E]"></i>
@@ -197,3 +182,59 @@ const displayCardData = (cardData) => {
 };
 
 loadData();
+
+// modal card 
+const loadSingleCardDetails = (id) => {
+  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
+    .then((res) => res.json())
+    .then((json) => displayModalData(json.data))
+    .catch((err) => console.log(err));
+};
+
+const displayModalData = (card) => {
+  const modalContent = document.getElementById("modal-content");
+
+  modalContent.innerHTML = `
+    <div class="space-y-4">
+      <div class="flex justify-between items-start">
+        <h2 class="text-2xl font-bold text-[#1F2937]">${card.title}</h2>
+        <button class="bg-[#FEECEC] px-4 py-2 rounded-full text-[#EF4444] font-medium uppercase">
+          ${card.priority}
+        </button>
+      </div>
+
+      <p class="text-lg text-[#64748B]">${card.description}</p>
+
+      <div class="flex gap-3 flex-wrap">
+        ${card.labels
+          .map(
+            (label, index) => `
+            <button class="${
+              index === 0
+                ? "bg-[#FECACA] text-[#EF4444]"
+                : "bg-[#FDE68A] text-[#D97706]"
+            } px-4 py-1 rounded-full font-medium">
+              ${label}
+            </button>
+          `
+          )
+          .join("")}
+      </div>
+
+      <hr class="opacity-30" />
+
+      <div class="space-y-2 text-[#64748B]">
+        <p><span class="font-semibold text-[#1F2937]">Issue ID:</span> #${card.id}</p>
+        <p><span class="font-semibold text-[#1F2937]">Status:</span> ${card.status}</p>
+        <p><span class="font-semibold text-[#1F2937]">Author:</span> ${card.author}</p>
+        <p><span class="font-semibold text-[#1F2937]">Assignee:</span> ${card.assignee || "Not assigned"}</p>
+        <p><span class="font-semibold text-[#1F2937]">Created At:</span> ${card.createdAt}</p>
+        <p><span class="font-semibold text-[#1F2937]">Updated At:</span> ${card.updatedAt}</p>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("issue_modal").showModal();
+};
+
+
