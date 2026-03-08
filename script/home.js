@@ -139,7 +139,7 @@ const displayCardData = (cardData) => {
             <div class="w-10 h-10 bg-[#BBF7D0] rounded-full flex items-center justify-center">
               <i class="fa-solid fa-circle-info text-[#00A96E]"></i>
             </div>
-            <button class="bg-[#FEECEC] px-4 py-2 rounded-4xl text-[#EF4444] font-medium">
+            <button class="bg-[#FEECEC] px-3 py-1 text-sm rounded-4xl text-[#EF4444] font-medium">
               ${card.priority}
             </button>
           </div>
@@ -159,7 +159,7 @@ const displayCardData = (cardData) => {
         index === 0
           ? "bg-[#FECACA] text-[#EF4444]"
           : "bg-[#FDE68A] text-[#D97706]"
-      } px-4 py-1  justify-between rounded-4xl font-medium ">
+      } px-2 py-1  justify-between rounded-4xl text-sm font-medium ">
         ${label}
       </button>
     `
@@ -237,4 +237,24 @@ const displayModalData = (card) => {
   document.getElementById("issue_modal").showModal();
 };
 
+// Search function
+const handleSearch = (searchText) => {
+  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
+    .then(res => res.json())
+    .then(json => displayCardData(json.data))
+    .catch(err => console.log(err));
+};
 
+document.getElementById("search-btn").addEventListener("click", function () {
+
+  const searchInput = document.getElementById("search-input");
+  const searchText = searchInput.value.trim();
+
+  if (searchText === "") {
+    displayCardData(allCards);
+    return;
+  }
+
+  handleSearch(searchText);
+
+});
