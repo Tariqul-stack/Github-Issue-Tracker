@@ -130,6 +130,18 @@ const displayCardData = (cardData) => {
       ? "border-[#00A96E]"
       : "border-[#A855F7]";
 
+      const formatDate = (dateString) => {
+  const date = new Date(dateString);
+
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+};
+
     const cardDiv = document.createElement("div");
 
     cardDiv.innerHTML = `
@@ -171,7 +183,7 @@ const displayCardData = (cardData) => {
 
           <div class="text-[#64748B] space-y-3">
             <p>#${card.id} by ${card.author}</p>
-            <p>${card.createdAt}</p>
+            <p>${formatDate(card.createdAt)}</p>
           </div>
         </div>
       
@@ -192,6 +204,19 @@ const loadSingleCardDetails = (id) => {
 };
 
 const displayModalData = (card) => {
+
+    const formatDate = (dateString) => {
+  const date = new Date(dateString);
+
+  return date.toLocaleString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+};
+
   const modalContent = document.getElementById("modal-content");
 
   modalContent.innerHTML = `
@@ -228,8 +253,8 @@ const displayModalData = (card) => {
         <p><span class="font-semibold text-[#1F2937]">Status:</span> ${card.status}</p>
         <p><span class="font-semibold text-[#1F2937]">Author:</span> ${card.author}</p>
         <p><span class="font-semibold text-[#1F2937]">Assignee:</span> ${card.assignee || "Not assigned"}</p>
-        <p><span class="font-semibold text-[#1F2937]">Created At:</span> ${card.createdAt}</p>
-        <p><span class="font-semibold text-[#1F2937]">Updated At:</span> ${card.updatedAt}</p>
+        <p><span class="font-semibold text-[#1F2937]">Created At:</span> ${formatDate(card.createdAt)}</p>
+<p><span class="font-semibold text-[#1F2937]">Updated At:</span> ${formatDate(card.updatedAt)}</p>
       </div>
     </div>
   `;
